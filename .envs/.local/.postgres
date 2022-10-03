@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=usersapidjango
+POSTGRES_USER=LDRymXlITspBBlFukYJqVPDoIMVMLyKg
+POSTGRES_PASSWORD=OnXoRUqyRslSyrOh2F4bg7mTDTr4j3ZlEXGCtCpVIKem2yL81YW2gnLk3Je10b3K
