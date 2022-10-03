@@ -1,58 +1,50 @@
-# usersapi_django
 
-Returns users from large data in db, allows for search or filters
+USERS API
+This is a backend API that makes a call to our Users database and returns the request made by the user.
 
-[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
-[![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+API Endpoint
+/users
 
-License: MIT
+Calls to the APIs
 
-## Settings
+GET All USERS
+Gets all the users from the database using a GET request with no parameters. The database contains as many as a million users and will have features to accomodate that size of data with efficiency
 
-Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
+Endpoint
 
-## Basic Commands
+/users
 
-### Setting Up Your Users
+Features
 
--   To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
+Pagination: This will classify each select group of users into pages. That is e.g. 50 users per page. This will also enable the user making the call to be able to scroll from page to page (to and from).
 
--   To create a **superuser account**, use this command:
+Select Page: The user can choose the page which they would like to view.
 
-        $ python manage.py createsuperuser
+GET SINGLE USER
+Allows a call to get a specific user using parameters such as email and user_id
 
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
+Endpoint
 
-### Type checks
+/users/<string:param>
 
-Running type checks with mypy:
+Features
 
-    $ mypy usersapidjango
+Returns all the details about a specific user.
+Allows to search for a specific user using the specified feature
+Running the Application
+git clone the app:
 
-### Test coverage
+git@github.com:wanjiku-carol/users_api.git
 
-To run the tests, check your test coverage, and generate an HTML coverage report:
+Change directory into the app
 
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
+cd users_api
 
-#### Running tests with pytest
+Using Docker to Run the App
+To build the containers
 
-    $ pytest
+docker-compose -up -d --build
 
-### Live reloading and Sass CSS compilation
+To view the running containers:
 
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#sass-compilation-live-reloading).
-
-## Deployment
-
-The following details how to deploy this application.
-
-### Heroku
-
-See detailed [cookiecutter-django Heroku documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-on-heroku.html).
-
-### Docker
-
-See detailed [cookiecutter-django Docker documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html).
+docker ps
